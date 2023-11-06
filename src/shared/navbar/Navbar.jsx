@@ -5,7 +5,8 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     const navItems =<>
     <li><NavLink to="/" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> Home</NavLink></li> 
-   <li><NavLink to="/about" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> About</NavLink></li>
+    <li><NavLink to="/rooms" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> Rooms</NavLink></li>
+   <li><NavLink to="/mybookings" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> My BooKings</NavLink></li>
    <li><NavLink to="/login" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> Login</NavLink></li>
     
     </>

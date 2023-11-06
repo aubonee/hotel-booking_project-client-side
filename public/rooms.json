@@ -1,0 +1,51 @@
+[
+    {
+        "description": "Deluxe Room with Ocean View",
+        "price_per_night": 200,
+        "room_size": "400 sqft",
+        "availability": true,
+        "room_image": "https://i.ibb.co/yqWRWcQ/20.jpg",
+        "special_offers": "Free breakfast included"
+      },
+    
+      {
+        "description": "Executive Suite",
+        "price_per_night": 300,
+        "room_size": "600 sqft",
+        "availability": false,
+        "room_image": "https://i.ibb.co/WcSn2Xq/22.jpg",
+        
+      },
+      {
+        "description": "Standard Room",
+        "price_per_night": 150,
+        "room_size": "300 sqft",
+        "availability": true,
+        "room_image": "https://i.ibb.co/qdvc2hK/21.jpg",
+        "special_offers": "10% off for a week-long stay"
+      }
+      {
+        "description": "Deluxe Room with Ocean View",
+        "price_per_night": 200,
+        "room_size": "400 sqft",
+        "availability": true,
+        "room_image": "https://i.ibb.co/yqWRWcQ/20.jpg",
+        "special_offers": "Free breakfast included"
+      },
+    
+      {
+        "description": "Executive Suite",
+        "price_per_night": 300,
+        "room_size": "600 sqft",
+        "availability": false,
+        "room_image": "https://i.ibb.co/WcSn2Xq/22.jpg"
+      },
+      {
+        "description": "Standard Room",
+        "price_per_night": 150,
+        "room_size": "300 sqft",
+        "availability": true,
+        "room_image": "https://i.ibb.co/qdvc2hK/21.jpg",
+        "special_offers": "10% off for a week-long stay"
+      }
+]
