@@ -1,5 +1,5 @@
 
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import logo from "../../assets/images/Logo.png"
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from "../../providers/AuthProvider";

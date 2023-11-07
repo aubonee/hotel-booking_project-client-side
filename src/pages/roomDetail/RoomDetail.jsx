@@ -6,33 +6,46 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useContext } from 'react';
 
-const RoomDetail = () => {
+
+const RoomDetail =() => {
   const {user} =useContext(AuthContext)
     const detail =useLoaderData();
-    const {_id,title,availability, room_images, description,price_per_night,quantity,special_offers, room_size}= detail;
+    const {_id,title, room_images, description,price_per_night,quantity,special_offers, room_size}= detail;
     const [selectedDate, setDate] =useState(null)
-    const handlebook =() => {
+
+
+
+
+    const handleBook =() => {
+     // const date =
+       console.log('Form submitted');
+      // event.preventDefault();
+
+      // const form = event.target;
+      // const date = form.date.value;
+    
+      const newItem = { ...detail, setDate, email: user?.email };
+      fetch(`http://localhost:5000/bookings`,{
+        method:'POST',
+        headers:{
+          'content-type':'application/json'
+        },body:JSON.stringify(newItem)
+      })
+      .then(res=>res.json())
+          .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire(
+                    'Good job!',
+                    'booked successfully',
+                    'success'
+                  )
+    
+    
+            }
+          })
+       
     }
-       const newItem={...detail,email:user?.email}
-    fetch(`http://localhost:5173/bookings`,{
-      method:'POST',
-      headers:{
-        'content-type':'application/json'
-      },body:JSON.stringify(newItem)
-    })
-    .then(res=>res.json())
-        .then(data =>{
-          console.log(data);
-          if(data.insertedId){
-              Swal.fire(
-                  'Good job!',
-                  'booked successfully',
-                  'success'
-                )
-  
-  
-          }
-        })
      
   
      const first_image = room_images[0];
@@ -70,8 +83,11 @@ const RoomDetail = () => {
 )}
    </div>
    <div>
-    <div className="font-semibold font-xl"> <span className='text-green-900 font-bold'> Choose the Date:</span>  <DatePicker  required className='border-2 border-black' selected={selectedDate} onChange={date=>setDate(date)}></DatePicker></div>
-    <button onClick={()=> handlebook()} className='btn bg-green-900 text-white my-3 p-3'> Book Now </button>
+    
+
+   <div className="font-semibold font-xl"> <span className='text-green-900 font-bold'> Choose the Date:</span>  <DatePicker  required className='border-2 border-black' selected={selectedDate} onChange={date=>setDate(date)} dateFormat="dd/MM/yyyy"></DatePicker></div>
+  
+    <button type="submit" onClick={()=>handleBook()}  className='btn bg-green-900 text-white my-3 p-3'> Book Now </button>
    </div>
   
     
