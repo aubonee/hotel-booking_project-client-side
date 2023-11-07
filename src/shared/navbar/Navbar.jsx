@@ -1,13 +1,26 @@
 
+import { useContext, useEffect } from "react";
 import logo from "../../assets/images/Logo.png"
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+
+
+  
+  const {user, logOut} = useContext(AuthContext);
+   //////////////////////////////////////////////////////////////////////////////////
+ 
+  const handleSignOut =() =>{
+    logOut()
+    .then()
+    .catch()
+  }
     const navItems =<>
     <li><NavLink to="/" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> Home</NavLink></li> 
     <li><NavLink to="/rooms" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> Rooms</NavLink></li>
    <li><NavLink to="/mybookings" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> My BooKings</NavLink></li>
-   <li><NavLink to="/login" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> Login</NavLink></li>
+   
     
     </>
     return (
@@ -30,7 +43,20 @@ const Navbar = () => {
   </ul>
 </div>
 <div className="navbar-end">
-  <a className="btn">Appoinment</a>
+<div className="flex ">
+      {
+        user && <div className="flex  items-center"> <div><img className=" w-[30px] h-[30px] rounded-full" src={user.photoURL} alt="" /></div> <h2>{user.displayName}</h2> </div> 
+      }
+    </div>
+
+
+ 
+  {
+    user ?
+    <button onClick={handleSignOut} className="text-sm  my-2 mx-2 btn rounded-none bg-[#FF6969]  border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FF6969]">Sign Out</button>
+  :
+  <Link className=" my-2 mx-2 btn rounded-none bg-[#FF6969] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FF6969]" to="/login">Login</Link>
+  }
 </div>
 </div>
       </div>
