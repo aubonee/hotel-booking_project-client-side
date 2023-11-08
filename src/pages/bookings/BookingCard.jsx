@@ -1,15 +1,52 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
-const BookingCard = ({detail,booking,setBooking,date}) => {
+const BookingCard = ({detail,booking,setBooking,selectedDate,setDate}) => {
   
     const { _id,title, room_images, description,price_per_night,quantity,special_offers, room_size} = detail;
+
+    const handleCartDelete =(_id )=>{
+        console.log(_id);
+        Swal.fire({
+           title: 'Are you sure?',
+           text: "You won't be able to revert this!",
+           icon: 'warning',
+           showCancelButton: true,
+           confirmButtonColor: '#3085d6',
+           cancelButtonColor: '#d33',
+           confirmButtonText: 'Yes, delete it!'
+       }).then((result) => {
+           if (result.isConfirmed) {
+
+           //console.log("delete confirmed");
+           fetch(`http://localhost:5000/bookings/${_id}`, {
+               method: 'DELETE'
+           })
+           .then(res => res.json())
+           .then(data => {
+               console.log("data");
+               console.log(data);
+               if(data.deletedCount > 0){
+                   Swal.fire(
+                       'Deleted!',
+                       'This product is deleted from your cart.',
+                       'success'
+                    )
+                    const bookingdelete = booking.filter(item=>item._id!=_id)
+                    setBooking(bookingdelete);
+               }
+           })
+          }
+         })
+}
+
    
-    const first_image = room_images[0];
+   // const first_image = room_images[0];
      const second_image = room_images[1];
-     const date_var = date;
-     console.log("date");
-     console.log(date_var);
-     console.log(date);
+   //  const date = setDate;
+    //  console.log("date");
+    //  console.log(setDate);
+    //  console.log(date);
     return (
         <div>
          
@@ -19,9 +56,10 @@ const BookingCard = ({detail,booking,setBooking,date}) => {
     <h2 className="card-title"> {title}</h2>
     <p>{room_size}</p>
     <p>{price_per_night}</p>
-    <p>{date_var}</p>
+    {/* <p>{setDate}</p> */}
     <div className="card-actions justify-end">
-      <button  className="btn btn-primary">Delete</button>
+    <button  className="btn btn-primary">Update</button>
+      <button onClick={()=>handleCartDelete(_id)} className="btn btn-primary">Delete</button>
       {/* onClick={()=>handleCartDelete(_id)} */}
     </div>
   </div>
