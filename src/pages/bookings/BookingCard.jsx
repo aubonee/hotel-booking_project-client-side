@@ -50,7 +50,7 @@ const BookingCard = ({detail,booking,setBooking,selectedDate,setDate}) => {
     return (
         <div>
          
-         <div className="mx-auto p-3 m-5 max-w-[800px] card lg:card-side bg-base-100 shadow-xl">
+         <div className="mx-auto p-3 m-5 max-w-[800px] card md:card-side bg-base-100 shadow-xl">
          
           <figure className='h-full'><img className='ml-5 h-full w-[400px]' src={second_image} alt="Movie"/></figure>
           

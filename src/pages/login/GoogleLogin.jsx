@@ -34,7 +34,7 @@ const GoogleLogin = () => {
       }
     return (
         <div>
-             <button onClick={handleGoogleSignIn } className='font-extrabold underline underline-offset-4  text-[#702632]'>Google Login</button>
+             <button onClick={handleGoogleSignIn } className='font-extrabold btn border-2  text-green-900'>Google Login</button>
         </div>
     );
 };

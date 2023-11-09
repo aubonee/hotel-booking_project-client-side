@@ -88,7 +88,7 @@ const Login = () => {
     </div>
 
   </form>
-  <div className='text-center mb-5'><p>Dont have an account?</p> <span className='text-[#E1AF55] font-bold'> <Link to="/register">Register</Link></span> </div>
+  <div className='text-center mb-5'><p>Dont have an account?</p> <span className='border-none  my-2 btn text-white bg-[#E1AF55] font-bold'> <Link to="/register">Register</Link></span> </div>
 </div>
 </div>
 </div>

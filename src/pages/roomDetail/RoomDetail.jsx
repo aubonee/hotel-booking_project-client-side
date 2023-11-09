@@ -11,14 +11,11 @@ const RoomDetail = () => {
   const detail = useLoaderData();
   const { _id, title, room_images, description, price_per_night, quantity, special_offers, room_size } = detail;
   const [selectedDate, setSelectedDate] = useState(null);
+  //const[seatQuantity,setSeatQuantity] =useState({quantity})
 
   const handleBook = (event) => {
     event.preventDefault();
-    // if (!selectedDate) {
-     
-    //   Swal.fire('Please choose a date', 'warning');
-    //   return;
-    // }
+
     console.log('Selected Date:', selectedDate);
 
     const newItem = { ...detail, date: selectedDate, email: user?.email,id:_id };
