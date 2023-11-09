@@ -50,17 +50,25 @@ const BookingCard = ({detail,booking,setBooking,selectedDate,setDate}) => {
     return (
         <div>
          
-         <div className="mx-auto py-5 my-5 card max-w-[900px] h-[250px] card-side bg-base-100 shadow-xl">
-  <figure className='h-full'><img className='ml-5 h-full' src={second_image} alt="Movie"/></figure>
+         <div className="mx-auto p-3 m-5 max-w-[800px] card lg:card-side bg-base-100 shadow-xl">
+         
+          <figure className='h-full'><img className='ml-5 h-full w-[400px]' src={second_image} alt="Movie"/></figure>
+          
+
   <div className="card-body">
-    <h2 className="card-title"> {title}</h2>
-    <p>{room_size}</p>
-    <p>{price_per_night}</p>
-    {/* <p>{setDate}</p> */}
-    <div className="card-actions justify-end">
+    
+    
+    <div className='text-left mt-3'>
+   <h2 className="font-semibold font-xl"> <span className='text-green-900 font-bold'>Room Name :</span> {title}</h2>
+   <h2 className="font-semibold font-xl"> <span className='text-green-900 font-bold'>Price per night :</span> {price_per_night}</h2>
+   <h2 className="font-semibold font-xl"> <span className='text-green-900 font-bold'>Room size :</span> {room_size}</h2>
+ 
+   </div>
+    
+    <div className="card-actions">
     <button  className="btn btn-primary">Update</button>
       <button onClick={()=>handleCartDelete(_id)} className="btn btn-primary">Delete</button>
-      {/* onClick={()=>handleCartDelete(_id)} */}
+     
     </div>
   </div>
 </div>

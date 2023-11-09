@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import GoogleLogin from './GoogleLogin';
+import axios from "axios";
 
 const Login = () => {
     const[user,setUser] =useState(null); 
@@ -18,20 +19,32 @@ const Login = () => {
         const form =new FormData(e.currentTarget);
       const email=form.get('email');
       const password=form.get('password');
+
     console.log(email,password);
       signIn(email,password)
      
       .then(result=>{
-          console.log(result.user)
+        const loggedInUser =result.user;
+          console.log(loggedInUser);
+          const user ={email};
+          axios.post('http://localhost:5000/jwt', user , {withCredentials: true})
+          .then(res=>{
+            console.log(res.data)
+            if(res.data.success){
+               // navigate after login
+         navigate(location?.state ? location.state : '/');
+            }
+          })
           Swal.fire({
            icon: 'success',
            title: 'Login Succesful',
            showConfirmButton: false,
            timer: 1500
          })
-            
-         // navigate after login
-         navigate(location?.state ? location.state : '/');
+        
+        
+       //get access token
+
       })
       .catch(error=>{
         console.error(error)
@@ -51,10 +64,10 @@ const Login = () => {
 
 
 <div data-aos="fade-down"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000" className="card mx-24 flex-shrink-0 w-full text-white   bg-transparent">
-  <form  className="card-body  ">
+  <form onSubmit={handleLogin} className="card-body  ">
   <h1 data-aos="fade-right"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000" className="text-5xl text-white font-bold text-center">Login now!</h1>
   
-    <div onSubmit={handleLogin} className="form-control ">
+    <div  className="form-control ">
       <label className="label">
         <span className="label-text">Email</span>
       </label>
@@ -64,10 +77,10 @@ const Login = () => {
       <label className="label">
         <span className="label-text">Password</span>
       </label>
-      <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+      <input type="password" name='password' placeholder="password" className="input input-bordered text-black" required />
      
     </div>
-    <div className="form-control mt-6">
+    <div className="form-control mt-6 ">
       <button className="btn bg-[#495737] text-white">Login</button>
 
       <div className='flex items-center justify-center my-2'><GoogleLogin ></GoogleLogin></div>

@@ -20,7 +20,8 @@ const RoomDetail = () => {
     //   return;
     // }
     console.log('Selected Date:', selectedDate);
-    const newItem = { ...detail, date: selectedDate, email: user?.email };
+
+    const newItem = { ...detail, date: selectedDate, email: user?.email,id:_id };
 
     fetch(`http://localhost:5000/bookings`, {
       method: 'POST',

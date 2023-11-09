@@ -1,15 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react';
 import BookingCard from './BookingCard';
 import { AuthContext } from '../../providers/AuthProvider';
+import axios from 'axios';
 
 const MyBookings = () => {
     const [booking, setBooking]=useState([])
     const {user} =useContext(AuthContext)
+    const url =`http://localhost:5000/bookings/${user?.email}`;
     useEffect(()=>
     {
-        fetch(`http://localhost:5000/bookings/${user?.email}`).then(res=>res.json())
-        .then(data=>setBooking(data))
-    },[user])
+        // fetch(`http://localhost:5000/bookings/${user?.email}`).then(res=>res.json())
+        // .then(data=>setBooking(data))
+        axios.get(url, {withCredentials:true})
+        .then(res=>{
+            setBooking(res.data)
+
+        })
+    })
 
          console.log(booking);
     return (
