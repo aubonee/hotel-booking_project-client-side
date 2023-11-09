@@ -71,7 +71,7 @@ const Register = () => {
     <div className="hero-overlay " ></div>
     <div className="hero-content bg-black bg-opacity-20  flex-col ">
 <div className="text-center lg:text-left">
-<h1 className="text-5xl font-bold text-[#702632]">Register now!</h1>
+<h1 className="text-5xl font-bold text-white ">Register now!</h1>
 
 </div>
 <div  className="card mx-24 flex-shrink-0 w-full  shadow-2xl  bg-transparent">
@@ -105,13 +105,13 @@ const Register = () => {
   
  </div>
  <div className="form-control mt-6">
-   <button className="btn bg-[#702632] text-white">Register</button>
+   <button className="btn bg-[#495737] text-white">Register</button>
  
    {/* <div className='flex items-center justify-center my-2'><GoogleLogin ></GoogleLogin></div> */}
  </div>
 </form>
 
-<div className='mx-auto text-center my-5'><p>Already have an account?</p>  <span className='font-bold text-[#702632]'> <Link to="/Login">Login</Link></span></div>
+<div className='mx-auto text-center text-white my-5'><p>Already have an account?</p>  <span className=' btn font-bold bg-[#495737] text-white'> <Link to="/Login">Login</Link></span></div>
 </div>
 </div>
   </div>
