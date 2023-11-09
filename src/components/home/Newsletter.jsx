@@ -14,6 +14,7 @@ const Newsletter = () => {
                 JOIN NOW
             </h1>
             <p className="mb-5">"Book your room now, starting from BDT 200 per night".</p>
+           <Link to={'/register'}><button className="btn text-white bg-[#E1AF55] mx-2 border-none my-5">Sign Up</button></Link> 
       
           
           </div>
