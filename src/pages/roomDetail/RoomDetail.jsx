@@ -20,7 +20,7 @@ const RoomDetail = () => {
 
     const newItem = { ...detail, date: selectedDate, email: user?.email,id:_id };
 
-    fetch(`http://localhost:5000/bookings`, {
+    fetch(`https://hotel-booking-server-side-eight.vercel.app/bookings`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

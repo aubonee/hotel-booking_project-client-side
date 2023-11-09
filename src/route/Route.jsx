@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       },  {
         path: "/rooms/:id",
         element:<PrivateRoute><RoomDetail></RoomDetail></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
+        loader: ({params})=> fetch(`https://hotel-booking-server-side-eight.vercel.app/rooms/${params.id}`)
       }
       ]
     },
