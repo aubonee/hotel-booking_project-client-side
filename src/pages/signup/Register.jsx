@@ -69,12 +69,12 @@ const Register = () => {
         <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/BjfvDPr/1.jpg)'}}>
         {/*  */}
     <div className="hero-overlay " ></div>
-    <div className="hero-content flex-col ">
+    <div className="hero-content bg-black bg-opacity-20  flex-col ">
 <div className="text-center lg:text-left">
 <h1 className="text-5xl font-bold text-[#702632]">Register now!</h1>
 
 </div>
-<div  className="card mx-24 flex-shrink-0 w-full  shadow-2xl bg-base-100">
+<div  className="card mx-24 flex-shrink-0 w-full  shadow-2xl  bg-transparent">
 {/* onSubmit={handleRegister} */}
 <form onSubmit={handleRegister}  className="card-body">
 <div className="form-control ">
