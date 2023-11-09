@@ -7,6 +7,7 @@ import MyBookings from "../pages/bookings/MyBookings";
 import RoomDetail from "../pages/roomDetail/RoomDetail";
 import Register from "../pages/signup/Register";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/errorpage/ErrorPage";
 
 
 
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
       {
         path: "/",
