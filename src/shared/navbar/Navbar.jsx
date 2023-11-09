@@ -19,13 +19,13 @@ const Navbar = () => {
     const navItems =<>
     <li><NavLink to="/" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> Home</NavLink></li> 
     <li><NavLink to="/rooms" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> Rooms</NavLink></li>
-   <li><NavLink to="/mybookings" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> My BooKings</NavLink></li>
+   <li><NavLink to="/mybookings" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""}> My Bookings</NavLink></li>
    
     
     </>
     return (
         <div>
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100  text-green-900 font-semibold shadow-xl ">
 <div className="navbar-start">
   <div className="dropdown">
     <label tabIndex={0} className="btn btn-ghost lg:hidden">
