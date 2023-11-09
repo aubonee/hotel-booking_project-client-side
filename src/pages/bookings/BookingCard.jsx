@@ -19,7 +19,8 @@ const BookingCard = ({detail,booking,setBooking,selectedDate,setDate}) => {
            if (result.isConfirmed) {
 
            //console.log("delete confirmed");
-           fetch(`https://hotel-booking-server-side-eight.vercel.app/bookings/${_id}`, {
+          //  fetch(`https://hotel-booking-server-side-eight.vercel.app/bookings/${_id}`, {
+            fetch(`http://localhost:5000/bookings/${_id}`, {
                method: 'DELETE'
            })
            .then(res => res.json())
