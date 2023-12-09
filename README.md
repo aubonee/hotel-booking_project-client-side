@@ -15,5 +15,5 @@ Currently, two official plugins are available:
 - The HR can see all the employee info in the “Employee list page”  and can make the employee verified/unverified , can see employee details and can pay the salary to the Employee . If  the HR went to pay the salary to an employee twice a month it will give an alert.
 - The Admin will see all verified employee’s and HR’s info. If an admin wants he/she can make an employee HR. Admin can also fire any HR or employee.
 
-# Live Link: 
-<a href="[https://messy-person.surge.sh]" target="blank"><img align="left" src="https://img.shields.io/badge/Live%20Link-green" alt="Live link"  style="margin-left: 5px;" height="30" width="100" /></a>
+# Live Link:  https://messy-person.surge.sh
+<a href="[https://messy-person.surge.sh]" target="blank"><img align="left" src="https://img.shields.io/badge/Live%20Link-green" alt="Live link"   height="30" width="100" /></a>
